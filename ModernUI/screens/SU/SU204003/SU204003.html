@@ -1,10 +1,17 @@
 <template>
-    <qp-template id="form" name="1" class="equal-height">
-        <qp-fieldset slot="A" view.bind="SUComponent">
-            <field name="ComponentID"></field>
-            <field name="Description"></field>
-            <field name="ComponentType"></field>
-            <field name="Active"></field>
-        </qp-fieldset>
+    <qp-template id="Component_form" name="1-1" class="label-size-xm">
+        <div slot="A">
+            <qp-fieldset id="Component_General" view.bind="SUComponent" caption="Component">
+                <field name="ComponentID"></field>
+                <field name="Description"></field>
+                <field name="ComponentType"></field>
+                <field name="Active"></field>
+            </qp-fieldset>
+        </div>
+        <div slot="B">
+            <qp-fieldset id="Component_Body" view.bind="SUComponent" caption="Body">
+                <field name="Body" class="no-label"></field>
+            </qp-fieldset>
+        </div>
     </qp-template>
 </template>
