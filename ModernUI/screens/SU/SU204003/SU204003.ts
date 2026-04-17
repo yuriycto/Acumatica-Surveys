@@ -2,6 +2,9 @@ import {
     PXScreen,
     createSingle,
     graphInfo,
+    fieldConfig,
+    IFieldConfig,
+    IRichTextEditorConfig,
     PXView,
     PXFieldState,
     PXFieldOptions,
@@ -20,5 +23,18 @@ export class SurveyComponent extends PXView {
     Description: PXFieldState;
     ComponentType: PXFieldState<PXFieldOptions.CommitChanges>;
     Active: PXFieldState;
+
+    // Rich text editor with built-in Visual / HTML / Plain Text mode switcher
+    // (the default toolbar includes "mode-group"), expands to content with
+    // a comfortable minimum height.
+    @fieldConfig({
+        noLabel: true,
+        controlType: "qp-rich-text-editor",
+        controlConfig: {
+            expandToContent: true,
+            expandToContentMinHeight: 400,
+            spellcheck: false,
+        } as IRichTextEditorConfig,
+    } as IFieldConfig)
     Body: PXFieldState;
 }
